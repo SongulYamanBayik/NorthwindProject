@@ -1,0 +1,22 @@
+﻿@model List<NorthwindProject.Models.DTO.OrderDetailViewModel>
+@{
+    ViewData["Title"] = "OrderDetail";
+}
+
+<h1>Sipariş Detayı</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ürün Adı</th>
+        <th>Sipariş Adeti</th>
+        <th>Fiyat</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductName</td>
+            <td>@item.Quantity</td>
+            <td>@item.Price</td>
+        </tr>
+    }
+</table>

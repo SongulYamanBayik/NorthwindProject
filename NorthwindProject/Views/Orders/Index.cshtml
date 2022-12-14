@@ -1,0 +1,26 @@
+﻿@using NorthwindProject.Models.DTO
+@model List<OrdersViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Sipariş Listesi</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Sipariş No</th>
+        <th>Sipariş Tarihi</th>
+        <th>Müşteri Adı</th>
+        <th>Personel Adı</th>
+        <th>Toplam Ücret</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+         <tr>
+            <td><a href="/Orders/OrderDetail/@item.OrderID">@item.OrderID</a></td>
+            <td>@item.OrderDate</td>
+            <td>@item.ContactName</td>
+            <td>@item.EmployeeName</td>
+            <td>@item.TotalPrice</td>
+        </tr>
+    }
+</table>
